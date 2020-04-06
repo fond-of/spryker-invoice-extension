@@ -1,0 +1,22 @@
+<?php
+
+namespace FondOfSpryker\Zed\InvoiceExtension\Dependecy\Plugin;
+
+use Generated\Shared\Transfer\InvoiceTransfer;
+
+interface InvoicePreSavePluginInterface
+{
+    /**
+     * Specification:
+     * - Plugin is triggered before credit memo object is saved.
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\InvoiceTransfer $creditMemoTransfer
+     *
+     * @return \Generated\Shared\Transfer\InvoiceTransfer
+     */
+    public function preSave(
+        InvoiceTransfer $creditMemoTransfer
+    ): InvoiceTransfer;
+}
