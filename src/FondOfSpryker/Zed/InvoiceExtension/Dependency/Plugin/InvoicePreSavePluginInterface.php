@@ -1,14 +1,14 @@
 <?php
 
-namespace FondOfSpryker\Zed\InvoiceExtension\Dependecy\Plugin;
+namespace FondOfSpryker\Zed\InvoiceExtension\Dependency\Plugin;
 
 use Generated\Shared\Transfer\InvoiceTransfer;
 
-interface InvoicePostSavePluginInterface
+interface InvoicePreSavePluginInterface
 {
     /**
      * Specification:
-     * - Plugin is triggered after invoice object is saved.
+     * - Plugin is triggered before credit memo object is saved.
      *
      * @api
      *
@@ -16,5 +16,7 @@ interface InvoicePostSavePluginInterface
      *
      * @return \Generated\Shared\Transfer\InvoiceTransfer
      */
-    public function postSave(InvoiceTransfer $creditMemoTransfer): InvoiceTransfer;
+    public function preSave(
+        InvoiceTransfer $creditMemoTransfer
+    ): InvoiceTransfer;
 }
